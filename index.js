@@ -10,6 +10,7 @@ app.set('view engine', 'handlebars')
 app.use(express.static('public'))
 
 //converter dados do formulário em objetos js
+
 app.use(express.urlencoded({
     extended: true
 }))
@@ -17,6 +18,7 @@ app.use(express.urlencoded({
 app.use(express.json())
 
 //rotas
+
 app.post('/completar', (requisicao, resposta) => {
     const id = requisicao.body.id
 
@@ -69,6 +71,10 @@ app.post('/criar', (requisicao, resposta) => {
 
         resposta.redirect('/')
     })
+})
+
+app.get('/ativas', (requisicao, resposta) => {
+
 })
 
 app.get('/', (requisicao, resposta) => {
